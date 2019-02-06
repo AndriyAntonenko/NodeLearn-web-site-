@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Home</title>
+  <link rel="stylesheet" href="<%= assetFingerprint('/stylesheets/styles.css') %>">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+  <header class="container group primary-header">
+    <h1 class="logo"><a href="/">NodeLearn</a></h1>
+
+    <nav class="primary-nav nav">
+      <ul>
+        <li><a href="/">Главная</a></li><!--
+        --><li><a href="/post/add">Добавить статью</a></li><!--
+        --><li><a href="<%= typeof home !== 'undefined' ? `/users/${home}` : '/authorization' %>">Домой</a></li><!--
+        --><li><a href="/authorization">Авторизация</a></li><!--
+        --><li><a href="/registration" class="btn btn-join">Join now</a></li>
+      </ul>
+    </nav>
+  </header>

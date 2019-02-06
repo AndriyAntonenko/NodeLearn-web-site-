@@ -1,0 +1,54 @@
+<% include layout/header %>
+
+  <link rel="stylesheet" href="pretty/prettify.css">
+  <script type="text/javascript" src="pretty/prettify.js"></script>
+  <script type="text/javascript">prettyPrint();</script>
+
+  <div class="title">
+    <img src="..\images\article.png">
+    <h1>Поделись своими знаниями</h1>
+  </div>
+
+  <div id="grey-line"></div>
+
+  <section class="main container">
+    <form class="post-add" method="post">
+      <input type="hidden" id="post-id" name="postId" value="<%=
+      typeof post !== 'undefined' ? post.id : ''  %>">
+      <fieldset>
+        <label for="post-title">Заголовок</label>
+        <input type="text" name="post-title" id="post-title" value="<%=
+        typeof post !== 'undefined' ? post.title : '' %>">
+      </fieldset>
+      <fieldset>
+        <label for="description">Описание</label>
+        <textarea name="description" id="description"><%= typeof post !== 'undefined' ? post.description : '' %></textarea>
+      </fieldset>
+      <fieldset>
+        <label for="body">Текст</label>
+        <div name="post-body" id="post-body">
+          <%- typeof data !== 'undefined' ? data : '' %>
+        </div>
+      </fieldset>
+      <fieldset class="buttons">
+        <button id="btn-add">Опубликовать</button>
+        <button id="add-img">Добавить картинку</button>
+      </fieldset>
+    </form>
+
+    <div hidden id='add-img-form'>
+      <form id="fileinfo" method="POST" enctype="multipart/form-data">
+        <div class="img-added"></div>
+        <input type="hidden" id="post-id" name="postId" value="<%=
+         typeof post !== 'undefined' ? post.id : ''  %>">
+         <label id="file-label" for="file" class="custom-file-upload">
+           <input type="file" name="file" id="file" required> Выберите картинку
+         </label>
+      </form>
+    </div>
+  </section>
+
+  <link rel="stylesheet" href="stylesheets/editor-styles.css">
+  <script type="text/javascript" src="<%= assetFingerprint('javascripts/post.js') %>"></script>
+
+<% include layout/footer.ejs %>

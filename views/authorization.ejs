@@ -1,0 +1,33 @@
+<% include layout/header %>
+
+<div class="title">
+    <img src="images\hand-with-pen.png">
+    <h1>Авторизация</h1>
+  </div>
+  <div id="grey-line"></div>
+
+  <section class="authorization container">
+    <form action="#" method="post">
+
+      <fieldset class="authorization-group author">
+        <label>
+          Email
+          <input id="email" type="text" name="email" placeholder="name@domain.com" required>
+        </label>
+
+        <label>
+          Пароль
+          <input id="password" type="password" name="password" required>
+        </label>
+      </fieldset>
+      <fieldset class="account-action author">
+        <button type="button" class="btn btn-authorization btn-registration" name="submit" disabled>
+          Ввойти
+        </button>
+      </fieldset>
+    </form>
+  </section>
+
+  <script type="text/javascript" src="<%= assetFingerprint('javascripts/authorization-validation.js') %>"></script>
+
+  <% include layout/footer %>

@@ -1,0 +1,43 @@
+<% include layout/header.ejs %>
+
+<div class="title">
+    <img src="images\article.png">
+    <h1>Новые статьи</h1>
+  </div>
+
+  <div id="grey-line"></div>
+
+  <section class="main container">
+    <% for (let i = 0; i < posts.length; i++) { %>
+      <section class="article">
+        <div class="article-main-image">
+          <img src="<%= posts[i].img ? 'images/' + posts[i].img : 'images/no-image.png' %>">
+        </div>
+        <div class="article-text">
+          <h3>
+            <a href="<%= '/posts/' + posts[i].url %>"><%= posts[i].title %></a>
+            <% if(posts[i].owner.id === user.id) { %>
+              <a style="color: #FF6E52; font-size: 18px;" href="/post/edit/<%= posts[i].id %>">🖉</a>
+            <% } %>
+          </h3>
+          <div class="creator">
+            <img class="teacher" src="<%= posts[i].owner.img ? 'images/' + posts[i].owner.img : 'images/programmist.svg' %>">
+            <a href="<%= `/users/${posts[i].owner.url}` %>"><span class="name"><%= `${posts[i].owner.firstName} ${posts[i].owner.lastName}` %></span></a>
+            <small><br><%= posts[i].createdAt.toString().slice(0, 24) %></small>
+          </div>
+          <p><%= posts[i].description %></p>
+        </div>
+      </section>
+    <%}%>
+  </section>
+
+  <div class="pagination">
+    <% if (current > 1) { %>
+      <a class="new" href="/archive/<%= Number(current) - 1 %>">◀ К новым</a>
+    <% } %>
+    <% if (pages > 0 && current < pages) { %>
+      <a class="old" href="/archive/<%= Number(current) + 1 %>">К старым ▶</a>
+    <% } %>
+  </div>
+
+<% include layout/footer.ejs %>

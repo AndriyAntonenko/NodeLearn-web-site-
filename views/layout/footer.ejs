@@ -1,0 +1,25 @@
+<button class="button-up" hidden>
+    <img src="images\arrow.png">
+</button>
+
+<footer class="container group primary-footer">
+  <div class="copy-right"><small>&copy; NodeLearn</small></div>
+  <ul class="social">
+    <li><a href="https://twitter.com"><img src="images\Social Icons by Dreamstale (3).png"></a></li>
+    <li><a href="https://facebook.com"><img src="images\Social Icons by Dreamstale (6).png"></a></li>
+    <li><a href="https://www.instagram.com"><img src="images\Social Icons by Dreamstale (33).png"></a></li>
+    <li><a href="https://mail.google.com"><img src="images\Social Icons by Dreamstale (22).png"></a></li>
+  </ul>
+  <nav class="nav">
+    <ul>
+      <li><a href="/">Главная</a></li><!--
+      --><li><a href="/post/add">Добавить статью</a></li><!--
+      --><li><a href="<%= typeof home !== 'undefined' ? `/users/${home}` : '/authorization' %>">Домой</a></li><!--
+      --><li><a href="/authorization">Авторизация</a></li>
+    </ul>
+  </nav>
+</footer>
+
+<script type="text/javascript" src="<%= assetFingerprint('javascripts/up-button.js') %>"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+const buttonUp=document.body.querySelector(".button-up");buttonUp.onclick=(()=>{let o=document.documentElement.scrollTop,t=setInterval(()=>{o<=0?(scrollTo(0,0),clearInterval(t)):(o-=80,scrollTo(0,o))},20)}),window.addEventListener("scroll",()=>{document.documentElement.scrollTop>=100&&(buttonUp.hidden=!1),document.documentElement.scrollTop<100&&(buttonUp.hidden=!0)});

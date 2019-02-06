@@ -1,0 +1,659 @@
+/* Для поддержки старых браузеров*/
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*
+  ========================================
+  Clearfix
+  ========================================
+*/
+.group::before,
+.group::after {
+  content: "";
+  display: table;
+}
+.group::after{
+  clear: both;
+}
+.group {
+  clear: both;
+  *zoom: 1;
+}
+/*
+  =====================================================
+  Сетка
+  =====================================================
+*/
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.container {
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+/*
+  ==================================================
+  Типографика
+  ==================================================
+*/
+h1, h4, h3, h2, p {
+  margin-bottom: 22px;
+}
+h1, h2, h3, h4 {
+  color: #F6FFE5;
+}
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 44px;
+}
+h3 {
+  font-size: 21px;
+}
+h4 {
+  font-size: 18px;
+}
+/*
+  ====================================================
+  Ссылки
+  ====================================================
+*/
+a {
+  color: #CFD6C0;
+  text-decoration: none;
+}
+a:hover {
+  color: #FFFFFF;
+}
+h3 a {
+  color: #FF6E52;
+}
+h3 a:hover {
+  color: #FF8D73;
+}
+/*
+  ===================================================
+  Кнопки
+  ===================================================
+*/
+.btn {
+  display: inline-block;
+  border-radius: 25px;
+  margin: 0;
+  background-color: #DE9E35;
+  cursor: pointer;
+  letter-spacing: .5px;
+}
+.btn-join {
+  color: #fff;
+  padding: 5px 30px;
+}
+.btn:hover {
+  background-color: #FFB63D;
+}
+.show-more {
+  color: #fff;
+  padding: 5px 30px;
+  margin: 22px auto;
+  display: block;
+  border: none;
+  font-size: 24px;
+}
+.button-up {
+  cursor: pointer;
+  position: fixed;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  border: 3px solid #FF5A52;
+  right: 11px;
+  top: 420px;
+  background-color: transparent;
+}
+.button-up img {
+  width: 100%;
+}
+.button-up:hover {
+  border: 4px solid #FF8D73;
+}
+button:active, button:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+/*
+  ====================================================
+  Основной заголовок
+  ====================================================
+*/
+.logo {
+  float: left;
+  font-size: 36px;
+  line-height: 44px;
+  margin-left: 100px
+}
+/*
+  ====================================================
+  header
+  ====================================================
+*/
+.primary-header {
+  padding: 0;
+  background: #3e140c;
+  background: linear-gradient(to right, #390d0c, #421a0b);
+}
+.primary-header::after {
+  background: #cf4226;
+  background: -moz-linear-gradient(to left, #c02d28, #df5826);
+  background: -webkit-linear-gradient(to left, #c02d28, #df5826);
+  background: -o-linear-gradient(to left, #c02d28, #df5826);
+  background: linear-gradient(to left, #c02d28, #df5826);
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+}
+.title {
+  text-align: center;
+}
+.title img {
+  height: 140px;
+}
+#grey-line {
+  height: 3px;
+  background-color: #444;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+/*
+  ===================================================
+  Навигация
+  ===================================================
+*/
+.primary-nav {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: .5px;
+}
+.nav {
+  text-align: right;
+}
+.nav li {
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: top;
+  margin-top: 20px;
+}
+.primary-nav li:last-child {
+  margin-top: 15px;
+  margin-right: 100px;
+}
+/*
+  ====================================================
+  Global
+  ====================================================
+*/
+body {
+  font: 300 16px/22px "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #E7FEFF;
+  background-color: #222;
+  margin: 0;
+}
+input,
+button {
+  outline: none;
+}
+/*
+  ======================================================
+  Articles
+  ======================================================
+*/
+.main,
+.article-list {
+  display: flex;
+  flex-direction: column;
+}
+.article {
+  display: flex;
+  margin: 44px 144px;
+  border: 3px solid #333;
+  border-radius: 2px;
+  background-color: #000;
+}
+.article-main-image {
+  margin-right: 1.5%;
+  height: 300px;
+  vertical-align: middle;
+}
+.article-main-image img {
+  height: 100%;
+  width: 300px;
+}
+.teacher {
+  float: left;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin-right: 22px;
+}
+.name {
+  display: inline-block;
+  padding-top: 35px;
+  color: #999;
+  font-size: 18px;
+}
+.creator {
+  margin-bottom: 40px;
+}
+.article p {
+  clear: both;
+}
+/*
+  ====================================================
+  Авторизация
+  ====================================================
+*/
+.error-message {
+  font-size: 14px;
+  position: absolute;
+  background: rgba(255, 141, 115, 0.8);
+  margin: 14px auto;
+  text-align: center;
+  width: auto;
+  padding: 5px;
+  color: rgba(0, 0, 0, 0.72);
+}
+fieldset {
+  border: none;
+}
+.authorization {
+  width: 380px;
+  background-color: #222;
+  margin-bottom: 22px;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+.authorization-group input {
+  padding-left: 10px;
+  background-color: #fff;
+  color: #222;
+  display: block;
+  margin: 8px auto 22px auto;
+  border: 3px solid #DE9E35;
+  border-radius: 2px;
+  width: 80%;
+  height: 34px;
+}
+.authorization-group input:focus {
+  border: 4px solid #FFB63D;
+}
+.authorization-group {
+  color: #FF6E52;
+  font-size: 18px;
+}
+.btn-authorization {
+  display: block;
+  margin: 0 auto 10px auto;
+  border: none;
+  font-size: 24px;
+  padding: 5px 30px;
+  font-family: "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+}
+.btn-registration {
+  font-size: 18px;
+}
+/*
+  ==================================================
+  Добавление поста
+  ==================================================
+*/
+.post-add {
+  display: flex;
+  width: 70%;
+  margin: 30px auto 30px auto;
+  flex-direction: column;
+}
+.post-add label {
+  color: #FF6E52;
+}
+#post-title,
+#description,
+#post-body {
+  width: 100%;
+  border: 3px solid #333;
+  border-radius: 2px;
+  background-color: #ddd;
+  outline: none;
+}
+#post-body h2,
+#post-body {
+  color: black;
+}
+#post-title {
+  height: 30px;
+}
+#post-body {
+  height: 250px;
+  padding: 10px;
+  line-height: 1em;
+  overflow-y: scroll;
+  overflow-y: scroll;
+  color: black;
+}
+#btn-add,
+#add-img,
+#show-add-img,
+.send,
+.cancel {
+  padding: 10px 20px;
+  border: 2px solid #DE9E35;
+  border-radius: 2px;
+  color: #DE9E35;
+  background: none;
+  cursor: pointer;
+}
+#btn-add {
+  float: right;
+}
+#add-img {
+  float: left;
+}
+#btn-add:hover,
+#add-img:hover,
+#show-add-img:hover {
+  color: #FFB63D;
+}
+#fileinfo {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border: 3px solid #333;
+  border-radius: 2px;
+  margin: 0 auto 20px auto;
+}
+.custom-file-upload {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+#file {
+  display: none;
+}
+.img-added {
+  height: 50px;
+}
+.img-added img {
+  height: 100%;
+}
+/*
+  ===================================================
+  Страница поста
+  ===================================================
+*/
+.article-page {
+  width: 70%;
+  margin: 30px auto 30px auto;
+}
+.description,
+.user-info {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 40px;
+  font-size: 1.15em;
+  color: #FF6E52;
+}
+.comment-text textarea {
+  outline: none;
+  height: 100px;
+  width: 100%
+}
+.comments h1 {
+  color: #FF6E52;
+}
+.comments-list ul ul {
+  border-left: 2px solid #333;
+  padding-left: 20px;
+}
+.comments-list ul li {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+}
+.head a {
+  color: #FF6E52;
+}
+.head {
+  margin-bottom: 10px;
+}
+.comment-text {
+  display: none;
+}
+.comment-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.send {
+  margin: 10px 0 0 5px;
+}
+.cancel {
+  margin: 10px 5px 0 0;
+}
+.send:hover {
+  color: #FFB63D;
+  border: 2px solid #FFB63D;
+}
+.cancel:hover {
+  color: #FF6E52;
+  border: 2px solid #FF6E52;
+}
+#new,
+#reply {
+  cursor: pointer;
+  color: #CFD6C0;
+  text-decoration: none;
+}
+#new:hover,
+#reply:hover {
+  color: #FFFFFF;
+}
+.date {
+  color: #aaa;
+}
+.article-page-image {
+  margin-right: 20px;
+}
+.article-page-image img {
+  height: 300px;
+  width: 300px;
+  border: 3px solid #333;
+  border-radius: 5px;
+}
+/*
+  ===================================================
+  Страница пользователя
+  ===================================================
+*/
+.user-image {
+  margin-right: 1.5%;
+  height: 300px;
+  vertical-align: middle;
+}
+.user-image img {
+  height: 100%;
+  width: 300px;
+  border: 3px solid #333;
+  border-radius: 5px;
+}
+/*
+  =====================================================
+  Footer
+  =====================================================
+*/
+.primary-footer {
+  background: #111;
+  padding-bottom: 44px;
+  padding-top: 44px;
+}
+.primary-footer small{
+  float: left;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 22px;
+}
+.social li {
+  display: inline-block;
+}
+.social ul {
+  margin-top: 22px;
+}
+.social img {
+  height: 40px;
+  cursor: pointer;
+}
+.social {
+  padding: 0;
+}
+.copy-right {
+  display: block;
+  width: 100%;
+  height: 33px;
+}
+/*
+  ====================================================
+  Пагинация
+  ====================================================
+*/
+.old,
+.new {
+  font-size: 24px;
+  color: #FF6E52;
+}
+.old:hover,
+.new:hover {
+  color: #FF8D73;
+}
+.old {
+  display: block;
+  float: right;
+  margin: 10px 25px 10px 0;
+}
+.new {
+  display: block;
+  float: left;
+  margin: 10px 0 10px 25px;
+}
+/*
+  =====================================================
+  error
+  =====================================================
+*/
+.error {
+  width: 80%;
+  margin: 40px auto;
+}
+/*
+  ======================================================
+  Адаптивность
+  ======================================================
+*/
+@media (max-width: 1120px) {
+  .article-page {
+    width: 95%;
+  }
+  .logo {
+    margin-left: 10px;
+  }
+  .nav li:last-child {
+    margin-right: 10px;
+  }
+  .main,
+  .article-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .article {
+    margin: 20px 30px;
+    width: 305px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 800px) {
+  .nav li {
+    display: block;
+  }
+  .post-add {
+    width: 95%;
+  }
+  .hero {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .description {
+    flex-direction: column;
+    margin-bottom: 40px;
+    font-size: 1.15em;
+    color: #FF6E52;
+  }
+  .article-page-image {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .article-description {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 550px) {
+  .user-info {
+    flex-direction: column;
+    margin-bottom: 40px;
+    font-size: 1.15em;
+    color: #FF6E52;
+  }
+  .user-image {
+    margin-bottom: 30px;
+  }
+  .user-info {
+    margin-bottom: 0;
+  }
+}

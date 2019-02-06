@@ -1,0 +1,50 @@
+<% include layout/header.ejs %>
+
+  <section class="article-page">
+      <div class="description">
+        <div class="article-page-image">
+          <img src="<%= post.img ? 'images/' + post.img : 'images/no-image.png' %>">
+        </div>
+        <div class="article-description">
+          <h1><%= post.title %></h1>
+          <p><%= post.description %></p>
+          <div class="creator">
+            <img class="teacher" src="<%= post.owner.img ? 'images/' + post.owner.img : 'images/programmist.svg' %>">
+            <a href="<%= `/users/${post.owner.url}` %>"><span class="name"><%= `${post.owner.firstName} ${post.owner.lastName}` %></span></a>
+            <small><br><%= post.createdAt.toString().slice(0, 24) %></small>
+          </div>
+        </div>
+      </div>
+      <div id="grey-line"></div>
+      <div id="body" class="body">
+        <%- data %>
+      </div>
+
+      <div class="comments" id="<%= post.id %>">
+        <h1>Коментарии</h1>
+        <div class="comments-list">
+          <span id="new">Оставить коментарий</span>
+          <%- include('./layout/comments.ejs', { items: comments }) %>
+          <form class="comment-text">
+            <textarea name="body"></textarea>
+            <div class="comment-buttons">
+              <button class="cancel">Отмена</button>
+              <button class="send">Отправить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  </section>
+
+  <link rel="stylesheet" href="pretty/user-style.css">
+  <script type="text/javascript" src="pretty/prettify.js"></script>
+  <script type="text/javascript">
+    let presses = document.body.querySelectorAll('pre');
+    presses.forEach(pre => {
+      pre.className = "prettyprint lang-js";
+    });
+    prettyPrint();
+  </script>
+  <script type="text/javascript" src="<%= assetFingerprint('javascripts/comment.js') %>"></script>
+
+<% include layout/footer.ejs %>

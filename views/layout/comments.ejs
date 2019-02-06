@@ -1,0 +1,25 @@
+<% if(items.length) {  %>
+  <ul>
+    <% } %>
+
+      <% items.forEach((item) => { %>
+        <li id="<%= item.id %>">
+          <div class="head">
+            <a href="/users/<%= item.ownerURL %>">
+              <%= `${item.ownerName}` %>
+            </a>
+            <small class="date">
+              <%= moment(item.createdAt).fromNow() %>
+            </small>
+          </div>
+
+          <%= item.body %>
+          <span id="reply">Ответить</span>
+
+          <%- include('./comments.ejs', {items: item.children}) %>
+        </li>
+        <% }) %>
+
+        <% if(items.length) { %>
+  </ul>
+  <% } %>
