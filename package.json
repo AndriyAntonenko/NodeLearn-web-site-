@@ -2,7 +2,8 @@
   "name": "blog",
   "version": "1.0.0",
   "engines": {
-    "node": "8.11.4"
+    "node": "8.11.4",
+    "npm": "6.4.1"
   },
   "description": "",
   "main": "app.js",
